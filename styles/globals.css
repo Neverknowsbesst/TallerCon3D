@@ -1,13 +1,79 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  background-color: black;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'tailwindcss/tailwind.css';
+
+@layer components {
+  .custom-btn {
+    /* Estilos para el boton no seleccionado */
+    background-color: #254e58;
+    color: #379683;
+    border-color: #379683;
+    /* Estilos de borde */
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.25rem;
+    width: 120px;
+    height: 48px;
+  }
+
+  .custom-btn.btn-selected {
+    /* Estilos para el boton seleccionado */
+    background-color: #112d32;
+    color: #88bdbc;
+    border-color: #edf5e0;
+  }
 }
 
-.globe {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-  cursor: grabbing;
+body {
+  color: #88bdbc;
+  
+  /* Estilo del fondo */
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      #112d32
+    )
+    #88bdbc;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.box {
+
+  background-color: #112d32;
+  color: #88bdbc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.box img {
+  /* Estilos de la imagen dentro del cuadro */
+  width: 50%;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+.box p {
+  /* Estilos del texto dentro del cuadro */
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #254e58;
+  margin-bottom: 0.75rem;
+  white-space: pre-line;
+}
+.box-container {
+  border: 2px solid #edf5e0;
+  border-radius: 0.25rem;
+  width: 50%;
+}
+.navbar-container {
+  height: 80px;
 }
