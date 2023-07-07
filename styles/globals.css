@@ -77,3 +77,34 @@ body {
 .navbar-container {
   height: 80px;
 }
+.sidebar {
+  background-color: #f0f0f0;
+  width: 200px;
+  height: 100vh;
+  padding: 20px;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-item {
+  margin-bottom: 10px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+}
+
+.sidebar-icon {
+  margin-right: 10px;
+}
+
+.sidebar-text {
+  font-size: 16px;
+}

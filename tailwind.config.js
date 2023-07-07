@@ -5,7 +5,15 @@ module.exports = {
     './public/index.html',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors :{
+        
+          customGradientStart: '#88bdbc',
+          customGradientEnd: '#112d32',
+          customGradientOtro: '#254e58',
+          customGradientOtro2: '#379683',
+      },
+    },
   },
   plugins: [],
 }

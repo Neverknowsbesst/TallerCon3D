@@ -1,8 +1,10 @@
 "use client";
 import Navbar from './Navbar';
 import React, { useState } from 'react';
-import 'tailwindcss/tailwind.css';
 import ObjetoThree from "./ObjetoThree";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import PageSwitcher from './switch';
+
 
 
 const buttons = [
@@ -127,16 +129,26 @@ export default function Page() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="fixed top-0 left-0 w-full z-10">
+      <div className="fixed bottom-3 left-3 hover:scale-110 transform transition duration-300">
+      <object data="meteor-solid.svg" width="90" height="90"> </object>
+      </div>
+      <div className="fixed top-0 left-0 z-50">
+        <div className=" text-white p-4">
+          <PageSwitcher />
+        </div>
+      </div>
+      <div className="fixed top-0 left-0 w-full z-10 mb-40">
+      
+    
         <Navbar buttons={buttons} handleButtonClick={handleButtonClick} />
       </div>
         {selectedButtonInfo && (
           <div className="box-container w-[50%]">
-            <div className="flex border-1 border-[#edf5e0] items-center justify-center bg-inherit p-4">
-              <div className="w-1/2">
+            <div className="flex flex-col border-1 border-[#edf5e0] items-center justify-center bg-inherit p-4">
+              <div className="h-1/2 mb-4">
               <ObjetoThree modelPath={selectedButtonInfo.modelUrl} />
               </div>
-              <div className="w-1/2">
+              <div className="h-1/2">
                 <div className="text-lg font-bold text-[#112d32] mb-2">{selectedButtonInfo.text}</div>
                 <p className="text-sm whitespace-pre-line">{selectedButtonInfo.description}</p>
               </div>

@@ -8,7 +8,7 @@ const Model = ({ modelPath }) => {
   return (
     <>
       {/*escala es para las dimensiones del objeto*/}
-      <primitive object={gltf.scene} scale={0.05} />
+      <primitive object={gltf.scene} scale={0.15} />
     </>
   );
 };
