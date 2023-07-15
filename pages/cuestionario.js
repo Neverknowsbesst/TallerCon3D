@@ -8,20 +8,19 @@ const Cuestionario = () => {
   const [respuestas, setRespuestas] = useState([]);
 
   const pregunta = {
-    pregunta: '¿Cuál es tu color favorito?',
+    pregunta: 'Seleccione las preguntas que apliquen:',
     opciones: [
-      { opcion: 'Rojo', respuesta: 'Tu color favorito es el rojo.' },
-      { opcion: 'Azul', respuesta: 'Tu color favorito es el azul.' },
-      { opcion: 'Verde', respuesta: 'Tu color favorito es el verde.' },
-      { opcion: 'Rojo1', respuesta: 'Tu color favorito es el rojo.' },
-      { opcion: 'Azul1', respuesta: 'Tu color favorito es el azul.' },
-      { opcion: 'Verde1', respuesta: 'Tu color favorito es el verde.' },
-      { opcion: 'Rojo2', respuesta: 'Tu color favorito es el rojo.' },
-      { opcion: 'Azul2', respuesta: 'Tu color favorito es el azul.' },
-      { opcion: 'Verde2', respuesta: 'Tu color favorito es el verde.' },
-      { opcion: 'Rojo3', respuesta: 'Tu color favorito es el rojo.' },
-      { opcion: 'Azul3', respuesta: 'Tu color favorito es el azul.' },
-      { opcion: 'Verde3', respuesta: 'Tu color favorito es el verde.' },
+      { opcion: '¿Usas el computador para jugar videojuegos?', respuesta: '-)Para jugar videojuegos, sobre todo los más recientes, necesitarías comprar una GPU "dedicada", o sea, una que compras aparte de la CPU y ubicas físicamente en tu computador. La razón es que las GPU se encargan de "correr" las aplicaciones, por lo que si un juego usa muchos recursos, necesitará una con más memoria y frecuencia. Todos los juegos para PC tienen especificaciones de sus requerimientos mínimos y recomendados, así que siempre puedes revisar los de tu juego objetivo.' },
+      { opcion: '¿Usas el computador para exclusivamente trabajar en él?', respuesta: '-)Si usas computadoras exclusivamente para trabajar, puedes elegir no comprar una GPU, pero si es el caso, tu CPU debe tener una tarjeta gráfica "integrada". Ésta sirve para usar la placa madre para conectar monitores sin necesidad de una tarjeta gráfica por separado, pero no son suficientemente intensivas para correr juegos modernos.' },
+      { opcion: '¿Importa la cantidad de ruido que puedes generar a tu alrededor al usar el computador? ', respuesta: '-)Deberías de fijarte si hay muchos ventiladores en tu gabinete, o si puedes reemplazarlos por opciones más silenciosas, lo que puede necesitar más dinero. También aplica si es que decides comprar Water Cooling a tu CPU, que tambien puede ser ruidoso.' },
+      { opcion: '¿Usas/usarías multiples monitores para operar el computador?', respuesta: '-)Para GPU integradas, depende de la cantidad de outputs en tu Placa Madre para la cantidad de monitores que puedas agregar, que incluyen puertos HDMI, VGA, DVI, Display Port, y variaciones entre éstos. Para GPU dedicadas, aplican los mismos conceptos, pero para los puertos de éste.' },
+      { opcion: '¿Buscas frecuencias (FPS) altas en tu(s) monitor(es)?', respuesta: '-)Sería vital tener una GPU de alta gama para frecuencias más altas, las cuales puedes ver si soportan dichas frecuencias en casi todas las páginas de compra, ó la página de los desarrolladores. También se requiere un monitor que pueda soportar éstas frecuencias hya que no todos pueden.' },
+      { opcion: '¿Almacenas mucha información localmente?', respuesta: '-)Mucha información puede realentizar tu computadora, tanto en cargar aplicaiones como en iniciarla. Para ésto, es mucho mejor tener una SSD (Solid State Drive) tanto en puerto SATA como M2. Son más caras que unas HDD, pero una donde puedas almacenar el sistema operativo junto aplicaciones importantes, basta para no tener largas pantallas de carga. También sería ideal en cualquier computadora, pero es especialmente necesaria en éste caso.' },
+      { opcion: '¿Utilizas conexiones inalámbricas para tus dispositivos en general?', respuesta: '-)Para conexiones inalámbricas, sería vital invertir en adaptadores de red de calidad. Existen opciones conectadas por USB, pero es preferible comprar conectadas por PCIe, que están conectadas a la placa madre directamente. Cabe destacar que hay que corroborar que la Placa Madre tenga puerto PCIe para este fin.' },
+      { opcion: '¿Prefieres conexiones por cable a las conexiones inalámbricas?', respuesta: '-)Es preferible tener una placa madre con una cantidad decente de puertos USB, y/o que el gabinete los proporcione. Existen "splitters" de USB como opción más económica, pero dependiendo de la demanda de potencia de componentes externos, puede que ésta opción cause mal funcionamiento de éstos.' },
+      { opcion: '¿Tienes espacio físico limitado para ubicar el computador donde lo usas?', respuesta: '-)Sería preferible comprar un gabinete pequeño, que se conocen como Mini ATX. Componentes como GPU deben de ser compatibles en tamaño para estos gabinetes, como las que tienen 3 ventiladores que no caben en éstos gabinetes. Otros componentes que deben ser compatibles serían la Placa Madre, Fuente de Poder, y Ventiladores. Tampoco sería posible usar refrigeración líquida ya que éstos usan mucho espacio. Existen opciones de todo tipo para gabinetes pequeños, a veces más caros por lo compacto que deben ser, pero los componentes de más alta gama pueden no estar disponibles por el espacio que necesitaría para ventilación si es que se calienta mucho, o no hacen componentes de esa potencia compatibles por el momento.' },
+      { opcion: '¿Donde ubicarías el computador, tienes espacio de sobra?', respuesta: '-)Comprar gabienetes ATX o E-ATX sería ideal para no preocuparse por compatibilidad de espacio de componentes, las últimas siendo las más grandes. Si compras ATX debes de estar al tanto de las dimensiones máximas de componentes de todos modos, ya que las opciones más caras al momento pueden no caber. Puedes darte la libertad de comprar una Placa Madre con más puertos para expandir más adelante si es posible.' },
+      { opcion: '¿Comprarías las GPU y/o CPU más nuevos para tu computador?', respuesta: '-)Para las opciones de más alta gama, tener un ventilador de CPU decente es usualmente lo que se necesita, incluso si éstos vienen incluidos con su compra ya que aumentan el tiempo de vida de éste, y si el ventilador es mejor, más aún. Tener buena ventilación interna para una GPU es esencial. Uno logra ésto ubicando ventiladores de forma que el aire fluya hacia afuera con la menor cantidad de obstáculos y mayor espacio entre la GPU y el exterior posible. No es sustancial la mejora de los ventiladores del gabinete, pero ayuda a éste caso de todos modos, asi que deberías de dejar esta mejora para el final si es que alcanza el dinero.'},
     ],
   };
 
@@ -57,9 +56,8 @@ const Cuestionario = () => {
           <PageSwitcher />
         </div>
       </div>
-      <h1 className="text-2xl mb-5 mr-0">Cuestionario</h1>
-      <p className="mb-10 text-customGradientOtro">aaaaaaaaaaaaa a a a aaaaaaaaaaaaaa a a aaaaaaaaa</p>
-      <div className="flex w-4/5 ml-4 border-2 border-customGradientOtro border-spacing-1000 bg-gradient-to-b from-customGradientEnd to-customGradientOtro">
+      <p className="mb-5 font-bold text-xl underline text-customGradientOtro">A continuación hay un cuestionario donde se le va presentar preguntas para recomendar decisiones dependiendo de sus necesidades.</p>
+      <div className="flex w-5/6 ml-4 border-2 border-customGradientOtro border-spacing-1000 bg-gradient-to-b from-customGradientEnd to-customGradientOtro">
         <div className="w-1/2 pr-4 mr-4">
           <form className="mb-4 m-4" onSubmit={handleSubmit(onSubmit)}>
             <div>
